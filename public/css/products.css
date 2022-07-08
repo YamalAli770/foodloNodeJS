@@ -1,0 +1,128 @@
+* {
+    font-family: 'Roboto Mono', monospace;
+}
+
+.products {
+    display: flex;
+    flex-direction: column;
+    background-color: #e7d3d3;
+}
+
+.productsTop {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem;
+}
+
+.productsBottom {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+}
+
+.searchContainer {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding: 2rem;
+}
+
+#pSearch {
+    background-color: transparent;
+    border: none;
+    color: black;
+    border-bottom: 0.2rem solid black;
+    outline: none;
+    font-size: 1.7rem;
+    padding: 0.5rem;
+    width: 50rem;
+}
+
+#search {
+    cursor: pointer;
+    background-color: transparent;
+    border: 2px solid black;
+    padding: 1rem;    
+    font-size: 1.7rem;
+}
+
+.categoryBtn {
+    padding: 1rem;
+    border-radius: 3rem;
+    background-color: transparent;
+    border: 0.2rem solid black;
+    font-size: 1.7rem;
+    cursor: pointer;
+}
+
+.categoryButtonsContainer {
+    display: flex;
+    margin-right: 8.5rem;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.pdCard {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+.pdCard img {
+    width: 27rem;
+    height: 27rem;
+    object-fit: cover;
+}
+
+.imgPrice {
+    color: rgb(133, 77, 41);    
+}
+
+#mglass {
+    background-color: rgb(133, 77, 41);
+    position: absolute;
+    top: 40%;
+    left: 45.5%;
+    padding: 1.3rem;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.imgIContainer:hover #pImage{
+    transition: 0.5s ease-in-out;
+    filter: brightness(40%);
+}
+
+.imgIContainer:hover #mglass {
+    transition: 0.5s ease-in-out;   
+    z-index: 10;
+    opacity: 1;
+}
+
+@media(max-width:992px) {
+    .productsBottom {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .pdCard img {
+        width: 32rem;
+        height: 35rem;
+    }
+}
+
+@media(max-width:768px) {
+    .productsBottom {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .pdCard img {
+        width: 35rem;
+        height: 35rem;
+    }
+    .categoryButtonsContainer {
+        margin-right: 0;
+    }
+}
