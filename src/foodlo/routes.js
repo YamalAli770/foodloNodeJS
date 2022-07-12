@@ -52,6 +52,10 @@ router.get('/cart', (req, res) => {
     res.render('pages/cart');
 })
 
+router.get('/emptycart', (req, res) => {
+    res.render('pages/emptycart');
+})
+
 router.get('/checkout', (req, res) => {
     res.render('pages/checkout');
 })

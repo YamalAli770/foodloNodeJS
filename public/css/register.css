@@ -100,6 +100,28 @@
     font-size: 1.4rem;
 }
 
+.alertMessageContainer {
+    background-color: #e7d3d3;
+    margin: 0;
+}
+
+.alertMessages {
+    list-style-type: none;
+    margin: 0;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.alertmsg {
+    background-color: rgb(126, 77, 47);
+    color: white;
+    padding: 0.5rem;
+    width: 50rem;
+    border-radius: 0.3rem;
+}
+
 @media(max-width:400px) {
     .registerFormContainer {
         width: 25rem;
