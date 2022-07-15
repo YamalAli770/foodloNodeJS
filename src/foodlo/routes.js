@@ -56,6 +56,18 @@ router.get('/emptycart', (req, res) => {
     res.render('pages/emptycart');
 })
 
+router.get('/profile', (req, res) => {
+    res.render('pages/profile');
+})
+
+router.get('/changepassword', (req, res) => {
+    res.render('pages/changepassword');
+})
+
+router.get('/orders', (req, res) => {
+    res.render('pages/orders');
+})
+
 router.get('/checkout', (req, res) => {
     res.render('pages/checkout');
 })
