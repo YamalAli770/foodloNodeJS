@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" href="/css/about.css">
+    <link rel="stylesheet" href="/css/login.css">
+    <link rel="stylesheet" href="/css/register.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Mapbox -->
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.8.1/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.8.1/mapbox-gl.css' rel='stylesheet' />
+    <!-- Mapbox End -->
+    <title>foodlo</title>
+</head>
+<body>
+
+        <!-- Hamburger -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <img src="/images/foodlo Logo/logo1.png" alt="" class="logo">
+                <button class="close-btn"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <ul class="links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/#gallery">Gallery</a></li>
+                <li><a href="/products">Order Now</a></li>
+            </ul>
+            <div class="cart-btn-wrapper">
+                <a href="" class="cart">Cart <i class="fas fa-shopping-cart"></i></a>
+                <a href="" class="login">Register/Login <i class="fa-solid fa-user-plus"></i></a>
+            </div>
+        </aside>
+    
+        <button class="back-to-top hidden"><i class="fa-solid fa-circle-arrow-up"></i></button>
+    
+        <header class="header" id="myHeader">
+            <div class="headLogo">
+                <a href="/"><img src="/images/foodlo Logo/logo1.png" alt="foodlo Logo"></a>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/#gallery">Gallery</a></li>
+                    <li><a href="/products">Order Now</a></li>
+                </ul>
+            </nav>
+            <ul class="cart-login">
+                <li><a href="">Cart <i class="fas fa-shopping-cart"></i></a></li>
+                <li><a href="/register">Register/Login <i class="fa-solid fa-user-plus"></i></a></li>
+            </ul>
+            <button class="open-btn"><i class="fa-solid fa-bars"></i></button>
+        </header>
+
+        <section class="aboutHero">
+            <div class="aboutHeroText">
+                <h1><a href="/">Home</a> / Login</h1>
+            </div>
+        </section>
+
+        <!-- Registration Form -->
+        <div class="loginForm">
+            <div class="loginFormContainer">
+                <div id="formHeading">
+                    <h1><span>Lo</span>gin</h1>
+                </div>
+                    <div class="form">
+                    <form action="/login" method="POST">  
+                        <div class="input-field">
+                            <i class="fa-regular fa-envelope"></i>
+                            <input type="email" name="email" id="email" placeholder="Enter your email" required>
+                        </div>
+                        <div class="input-field">
+                            <i class="fa-solid fa-lock"></i>
+                            <input type="password" name="user-pass" id="user-pass" placeholder="Enter password" required>
+                            <i class="fa-regular fa-eye" id="eye1" onclick="showPass()"></i>
+                        </div>
+                        <div class="loginFooter">
+                            <input id="loginNow" type="submit" value="Login Now">
+                            <p id="registerLink">Not a member? <a href="/register">Register Now</a></p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="firstGridChild">
+                <div class="logo">
+                    <img src="/images/foodlo Logo/logo1.png" alt="">
+                </div>
+                <div class="socials">
+                    <a href="https://www.facebook.com/" target="_blank"><i class="socialIcon fa-brands fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/"><i class="socialIcon fa-brands fa-instagram"></i></a>
+                        <a href="https://www.twitter.com/"><i class="socialIcon fa-brands fa-twitter"></i></a>
+                        <a href="https://www.tiktok.com/"><i class="socialIcon fa-brands fa-tiktok"></i></a>
+                </div>
+            </div>
+            <div class="secondThirdGridContainer">
+                <div class="secondGridChild">
+                    <ul>
+                        <li><h3>Support</h3></li>
+                        <li><a href="">Contact Us</a></li>
+                        <li><a href="">FAQ</a></li>
+                        <li><a href="">Branch Locator</a></li>
+                    </ul>
+                </div>
+                <div class="thirdGridChild">
+                    <ul>
+                        <li><h3>foodlo</h3></li>
+                        <li><a href="">About FoodLo</a></li>
+                        <li><a href="">Carrers</a></li>
+                        <li><a href="">Newsroom</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="fourthGridChild" id="map"></div>
+            <div class="fifthGridChild">
+                <p>Copyright &copy; 2022 FoodLo pk | All Rights Reserved</p>
+            </div>
+        </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="/js/index.js"></script>
+    <script src="/js/showPass.js"></script>
+</body>
+</html>

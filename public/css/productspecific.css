@@ -56,6 +56,11 @@
 }
 
 .psbtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    gap: 0.7rem;
     width: 15rem;
     height: 4rem;
     text-align: center;

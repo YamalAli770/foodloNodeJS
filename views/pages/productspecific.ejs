@@ -20,44 +20,7 @@
     <title>foodlo</title>
 </head>
 <body>
-        <!-- Hamburger -->
-        <aside class="sidebar">
-            <div class="sidebar-header">
-                <img src="/images/foodlo Logo/logo1.png" alt="" class="logo">
-                <button class="close-btn"><i class="fa-solid fa-xmark"></i></button>
-            </div>
-            <ul class="links">
-                <li><a href="/">Home</a></li>
-                <li><a href="/about">About</a></li>
-                <li><a href="/#gallery">Gallery</a></li>
-                <li><a href="/products">Order Now</a></li>
-            </ul>
-            <div class="cart-btn-wrapper">
-                <a href="" class="cart">Cart <i class="fas fa-shopping-cart"></i></a>
-                <a href="" class="login">Register/Login <i class="fa-solid fa-user-plus"></i></a>
-            </div>
-        </aside>
-    
-        <button class="back-to-top hidden"><i class="fa-solid fa-circle-arrow-up"></i></button>
-    
-        <header class="header" id="myHeader">
-            <div class="headLogo">
-                <a href="/"><img src="/images/foodlo Logo/logo1.png" alt="foodlo Logo"></a>
-            </div>
-            <nav class="nav">
-                <ul>
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/about">About</a></li>
-                    <li><a href="/#gallery">Gallery</a></li>
-                    <li><a href="/products">Order Now</a></li>
-                </ul>
-            </nav>
-            <ul class="cart-login">
-                <li><a href="">Cart <i class="fas fa-shopping-cart"></i></a></li>
-                <li><a href="/register">Register/Login <i class="fa-solid fa-user-plus"></i></a></li>
-            </ul>
-            <button class="open-btn"><i class="fa-solid fa-bars"></i></button>
-        </header>
+    <%- include('../layout/header'); %>
 
         <section class="aboutHero">
             <div class="aboutHeroText">
@@ -77,10 +40,10 @@
                     <p id="productDesc"><span>Description: </span><%= product[0].fooddesc %> </p>
                     <h2 id="productPrice">$<%= product[0].price %> </h2>
                     <div class="psbtnwrapper">
-                        <button class="psbtn" id="addToCart">Add To Cart <i class="fa-solid fa-bag-shopping"></i></button>
+                        <button class="psbtn" id="addToCart" onclick="addToCart('<%= product[0].foodid %>', '<%= product[0].foodname %>', '<%= product[0].price %>')">Add To Cart <i class="fa-solid fa-bag-shopping"></i></button>
                         <button class="psbtn" id="buyNow">Buy Now <i class="fa-solid fa-money-bill-wave"></i></button>
                     </div>
-                    <h5 id="prodCategory">Category: <%= product[0].categoryid %> </h5>
+                    <h5 id="prodCategory">Category: <%= category %> </h5>
                 </div>
             </div>
         </section>
@@ -125,5 +88,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="/js/index.js"></script>
+    <script src="/js/addToCart.js"></script>
+    <script type="text/javascript">
+        let data = localStorage.getItem("cart");
+        document.getElementById('addToCart').setAttribute("href", `/cart/?products=${data}`)
+    </script>
 </body>
 </html>
